@@ -7,7 +7,7 @@ public class Matrix {
         row = 0;
         col = 0;
     }
-    Matrix(int n, int m) //create matrix
+    Matrix(int n, int m) 
     {
         row = n;
         col = m;
