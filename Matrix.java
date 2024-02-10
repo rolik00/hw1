@@ -7,7 +7,7 @@ public class Matrix {
         row = 0;
         col = 0;
     }
-    Matrix(int n, int m) 
+    Matrix(int n, int m)
     {
         row = n;
         col = m;
@@ -15,7 +15,6 @@ public class Matrix {
         for (int i = 0; i < row; i++)
             for (int j = 0; j < col; j++) matrix[i][j] = new Complex();
     }
-
     public void create_matrix()
     {
         Random r = new Random();
@@ -53,6 +52,13 @@ public class Matrix {
         if (this.row != A.row || this.col != A.col) throw new IllegalArgumentException("The matrices should have the same size");
         Matrix C = new Matrix(row, col);
         for(int i = 0; i < row; i++) for(int j = 0; j < col; j++) C.matrix[i][j] = this.matrix[i][j].sum(A.matrix[i][j]);
+        return C;
+    }
+    public Matrix diff(Matrix A)
+    {
+        if (this.row != A.row || this.col != A.col) throw new IllegalArgumentException("The matrices should have the same size");
+        Matrix C = new Matrix(row, col);
+        for(int i = 0; i < row; i++) for(int j = 0; j < col; j++) C.matrix[i][j] = this.matrix[i][j].diff(A.matrix[i][j]);
         return C;
     }
     public Matrix prod(Matrix A)
