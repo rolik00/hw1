@@ -23,5 +23,8 @@ public class Main {
         Matrix D = A.prod(B);
         System.out.println("Matrix D = A * B:");
         D.print_matrix();
+        Matrix E = A.diff(B);
+        System.out.println("Matrix E = A - B:");
+        E.print_matrix();
     }
 }
